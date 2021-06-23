@@ -35,7 +35,7 @@ class SemuaRuanganScreen extends StatelessWidget {
           ),
           SingleChildScrollView(
             child: Container(
-              height: MediaQuery.of(context).size.height * .75,
+              height: MediaQuery.of(context).size.height * .70,
               child: ListView.builder(
                 shrinkWrap: true,
                 itemBuilder: (_, index) => ChangeNotifierProvider.value(value: ruangs[index], child: RuangItem(),),
