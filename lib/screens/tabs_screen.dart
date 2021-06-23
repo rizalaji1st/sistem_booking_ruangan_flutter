@@ -66,6 +66,5 @@ class _TabsScreenState extends State<TabsScreen> {
         ), // This trailing comma makes auto-formatting nicer for build methods.
       ),
     );
-    ;
   }
 }
