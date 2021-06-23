@@ -46,7 +46,8 @@ class BerandaScreen extends StatelessWidget {
                 trailing: new IconButton(
                   icon: new Icon(Icons.search),
                   onPressed: () {
-                    Navigator.of(context).pushNamed( SemuaRuanganScreen.routeName);
+                    Navigator.of(context)
+                        .pushNamed(SemuaRuanganScreen.routeName);
                   },
                 ),
               ),
@@ -62,7 +63,10 @@ class BerandaScreen extends StatelessWidget {
                   style: TextStyle(fontSize: 18),
                 ),
                 GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context)
+                          .pushNamed(SemuaRuanganScreen.routeName);
+                    },
                     child: Text(
                       'Cari lebih',
                       style: TextStyle(color: Colors.blue),
@@ -74,7 +78,10 @@ class BerandaScreen extends StatelessWidget {
             child: Container(
               height: 350,
               child: ListView.builder(
-                itemBuilder: (_, index) => ChangeNotifierProvider.value(value: ruangs[index], child: RuangItem(),),
+                itemBuilder: (_, index) => ChangeNotifierProvider.value(
+                  value: ruangs[index],
+                  child: RuangItem(),
+                ),
                 itemCount: 2,
               ),
             ),

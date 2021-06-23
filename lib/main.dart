@@ -4,6 +4,7 @@ import './providers/ruangs.dart';
 import './screens/semua_ruangan_screen.dart';
 import './screens/tabs_screen.dart';
 import './screens/ruang_detail_screen.dart';
+import './providers/bookeds.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,8 +16,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (ctx) => Ruangs(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (ctx) => Ruangs(),
+        ),
+        ChangeNotifierProvider(
+          create: (ctx) => Bookeds(),
+        ),
+      ],
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
@@ -26,7 +34,7 @@ class MyApp extends StatelessWidget {
         home: TabsScreen(),
         routes: {
           SemuaRuanganScreen.routeName: (ctx) => SemuaRuanganScreen(),
-          RuangDetailScreen.routeName: (ctx) =>RuangDetailScreen(),
+          RuangDetailScreen.routeName: (ctx) => RuangDetailScreen(),
         },
       ),
     );

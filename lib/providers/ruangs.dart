@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../models/ruang.dart';
-import 'package:provider/provider.dart';
-
 class Ruangs with ChangeNotifier {
   List<Ruang> _ruangs = [
     Ruang(

@@ -69,6 +69,7 @@ class RuangDetailScreen extends StatelessWidget {
                                 width: double.infinity,
                                 child: ListView.separated(
                                     scrollDirection: Axis.horizontal,
+                                    // ignore: non_constant_identifier_names
                                     itemBuilder: (_2, int index) => Card(
                                           shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(25)
