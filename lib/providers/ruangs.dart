@@ -27,6 +27,7 @@ class Ruangs with ChangeNotifier {
           'icon': Icons.desktop_mac,
         },
       ],
+      biaya: 150000,
       satuan: "Jam",
       imageUrl:
           "https://cdn.pixabay.com/photo/2015/05/15/14/22/conference-room-768441_960_720.jpg",
@@ -54,6 +55,7 @@ class Ruangs with ChangeNotifier {
           'icon': Icons.desktop_mac,
         },
       ],
+      biaya: 130000,
       satuan: "Jam",
       imageUrl:
           "https://cdn.pixabay.com/photo/2017/03/28/12/17/chairs-2181994_960_720.jpg",
@@ -81,6 +83,7 @@ class Ruangs with ChangeNotifier {
           'icon': Icons.desktop_mac,
         },
       ],
+      biaya: 250000,
       satuan: "Jam",
       imageUrl:
           "https://cdn.pixabay.com/photo/2017/03/28/12/06/chairs-2181919_960_720.jpg",
@@ -108,6 +111,7 @@ class Ruangs with ChangeNotifier {
           'icon': Icons.desktop_mac,
         },
       ],
+      biaya: 200000,
       satuan: "Jam",
       imageUrl:
           "https://cdn.pixabay.com/photo/2017/03/28/12/11/chairs-2181960_960_720.jpg",
@@ -135,6 +139,7 @@ class Ruangs with ChangeNotifier {
           'icon': Icons.desktop_mac,
         },
       ],
+      biaya: 150000,
       satuan: "Jam",
       imageUrl:
           "https://cdn.pixabay.com/photo/2017/03/28/12/16/chairs-2181980_960_720.jpg",
@@ -162,6 +167,7 @@ class Ruangs with ChangeNotifier {
           'icon': Icons.desktop_mac,
         },
       ],
+      biaya: 230000,
       satuan: "Jam",
       imageUrl:
           "https://cdn.pixabay.com/photo/2017/03/28/12/06/chairs-2181916_960_720.jpg",

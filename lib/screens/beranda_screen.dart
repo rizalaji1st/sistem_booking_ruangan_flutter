@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../providers/ruangs.dart';
 import '../models/ruang.dart';
+import '../widgets/ruang_item.dart';
+import '../screens/semua_ruangan_screen.dart';
 
 class BerandaScreen extends StatelessWidget {
-  List<Ruang> ruangs = Ruangs().getRuangsAll;
+  final List<Ruang> ruangs = Ruangs().getRuangsAll;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +45,9 @@ class BerandaScreen extends StatelessWidget {
                 ),
                 trailing: new IconButton(
                   icon: new Icon(Icons.search),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed( SemuaRuanganScreen.routeName);
+                  },
                 ),
               ),
             ),
@@ -69,19 +74,8 @@ class BerandaScreen extends StatelessWidget {
             child: Container(
               height: 350,
               child: ListView.builder(
-                itemBuilder: (_, index) {
-                  return GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      height: 150,
-                      child: Image.network(
-                        ruangs[index].imageUrl,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  );
-                },
-                itemCount: ruangs.length,
+                itemBuilder: (_, index) => ChangeNotifierProvider.value(value: ruangs[index], child: RuangItem(),),
+                itemCount: 2,
               ),
             ),
           ),
