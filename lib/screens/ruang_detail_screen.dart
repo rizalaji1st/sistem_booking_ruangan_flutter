@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/ruang.dart';
 import '../providers/ruangs.dart';
+import '../screens/pesan_ruang_screen.dart';
 
 class RuangDetailScreen extends StatelessWidget {
   static const routeName = '/ruang-detail-screen';
@@ -96,7 +97,9 @@ class RuangDetailScreen extends StatelessWidget {
                             ],
                           ),
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).pushNamed(PesanRuangScreen.routeName, arguments: ruang.id);
+                            },
                             child: Container(
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),

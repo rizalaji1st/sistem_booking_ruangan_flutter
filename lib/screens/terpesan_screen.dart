@@ -7,9 +7,9 @@ import '../providers/bookeds.dart';
 class TerpesanScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-  final _bookedProvider = Provider.of<Bookeds>(context);
-  final List<Booked> _bookeds = _bookedProvider.bookedsAll;
-  final localizations = MaterialLocalizations.of(context);
+    final _bookedProvider = Provider.of<Bookeds>(context);
+    final List<Booked> _bookeds = _bookedProvider.bookedsAll;
+    final localizations = MaterialLocalizations.of(context);
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -24,7 +24,7 @@ class TerpesanScreen extends StatelessWidget {
           ListView.separated(
             shrinkWrap: true,
             itemCount: _bookeds.length,
-            separatorBuilder: (_, int index) => Divider(),
+            separatorBuilder: (_, int index) => Divider(color: Colors.white,),
             itemBuilder: (_2, int index) => Card(
               child: ListTile(
                 contentPadding: EdgeInsets.all(15),
@@ -43,11 +43,18 @@ class TerpesanScreen extends StatelessWidget {
                   backgroundColor: Colors.transparent,
                 ),
                 isThreeLine: true,
-                title: Text(_bookeds[index].nama, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),),
-                subtitle : Text( "${DateFormat('yyyy-MM-dd').format(_bookeds[index].tanggalPesan)} \n ${localizations.formatTimeOfDay(_bookeds[index].jamAwal)} - ${localizations.formatTimeOfDay(_bookeds[index].jamAwal)}  WIB"),
+                title: Text(
+                  _bookeds[index].nama,
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue),
                 ),
+                subtitle: Text(
+                    "${Bookeds().findRuang(_bookeds[index].idRuang).nama} \n ${DateFormat('yyyy-MM-dd').format(_bookeds[index].tanggalPesan)} \n ${localizations.formatTimeOfDay(_bookeds[index].jamAwal)} - ${localizations.formatTimeOfDay(_bookeds[index].jamAkhir)}  WIB"),
               ),
             ),
+          ),
         ],
       ),
     );

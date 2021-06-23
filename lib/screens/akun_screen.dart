@@ -5,6 +5,7 @@ import 'package:sistem_booking_ruangan_flutter/widget/appbar_widget.dart';
 import 'package:sistem_booking_ruangan_flutter/widget/numbers_widget.dart';
 import 'package:sistem_booking_ruangan_flutter/widget/profile_widget.dart';
 import '../providers/users.dart';
+import '../widgets/build_akun.dart';
 
 class AkunScreen extends StatefulWidget {
   @override
@@ -26,7 +27,7 @@ class _AkunScreenState extends State<AkunScreen> {
             onClicked: () async {},
           ),
           const SizedBox(height: 24),
-          buildName(user),
+          BuildAkun(user),
           const SizedBox(height: 24),
           const SizedBox(height: 24),
           NumbersWidget(),
@@ -36,21 +37,4 @@ class _AkunScreenState extends State<AkunScreen> {
     );
   }
 
-  Widget buildName(User user) => Column(
-        children: [
-          Text(
-            user.nama,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-          ),
-          const SizedBox(height: 4),
-          Text(
-            user.email,
-            style: TextStyle(color: Colors.grey),
-          ),
-          Text(
-            user.nik,
-            style: TextStyle(color: Colors.grey),
-          )
-        ],
-      );
 }

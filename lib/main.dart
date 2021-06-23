@@ -5,6 +5,7 @@ import './screens/semua_ruangan_screen.dart';
 import './screens/tabs_screen.dart';
 import './screens/ruang_detail_screen.dart';
 import './providers/bookeds.dart';
+import './screens/pesan_ruang_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         routes: {
           SemuaRuanganScreen.routeName: (ctx) => SemuaRuanganScreen(),
           RuangDetailScreen.routeName: (ctx) => RuangDetailScreen(),
+          PesanRuangScreen.routeName: (ctx) => PesanRuangScreen(),
         },
       ),
     );
