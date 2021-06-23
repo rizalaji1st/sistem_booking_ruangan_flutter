@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import './akun_screen.dart';
+import './beranda_screen.dart';
+import './terpesan_screen.dart';
 
 class TabsScreen extends StatefulWidget {
   @override
@@ -6,12 +9,23 @@ class TabsScreen extends StatefulWidget {
 }
 
 class _TabsScreenState extends State<TabsScreen> {
-  int _selectedPageIndex = 0;
+  List<Map<String, Object>> _pages;
+  int _selectedPageIndex = 1;
 
   @override
   void initState() {
-    // TODO: implement initState
+    _pages = [
+    { 'title': 'Terpesan','page': TerpesanScreen(),},
+    { 'title': 'Beranda','page': BerandaScreen(),},
+    {'title': 'Manajemen Akun', 'page': AkunScreen() ,},
+  ] ;
     super.initState();
+  }
+
+  void _selectPage(int index) {
+    setState(() {
+      _selectedPageIndex = index;
+    });
   }
 
   @override
@@ -20,38 +34,32 @@ class _TabsScreenState extends State<TabsScreen> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('widget.title'),
+          title: Text(_pages[_selectedPageIndex]['title'] as String),
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                'You have pushed the button this many times:',
-              ),
-            ],
-          ),
-        ),
+        body: _pages[_selectedPageIndex]['page'] as Widget,
         bottomNavigationBar: BottomNavigationBar(
-          onTap: (value) {},
+          onTap:_selectPage,
           backgroundColor: Colors.white,
           unselectedItemColor: Colors.grey,
           selectedItemColor: Colors.blue,
-          currentIndex: 1,
+          currentIndex: _selectedPageIndex,
           items: [
             BottomNavigationBarItem(
               backgroundColor: Colors.blue,
               icon: Icon(Icons.book),
+              // ignore: deprecated_member_use
               title: Text('Book'),
             ),
             BottomNavigationBarItem(
               backgroundColor: Colors.blue,
               icon: Icon(Icons.home),
+              // ignore: deprecated_member_use
               title: Text('Home'),
             ),
             BottomNavigationBarItem(
               backgroundColor: Colors.blue,
               icon: Icon(Icons.person),
+              // ignore: deprecated_member_use
               title: Text('Profil'),
             ),
           ],
