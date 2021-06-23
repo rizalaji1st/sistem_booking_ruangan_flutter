@@ -1,4 +1,6 @@
-class Ruang{
+import 'package:flutter/material.dart';
+
+class Ruang with ChangeNotifier{
   final String id;
   final String nama;
   final int kapasitas;

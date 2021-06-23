@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sistem_booking_ruangan_flutter/screens/tabs_screen.dart';
+import './screens/semua_ruangan_screen.dart';
+import './screens/tabs_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,6 +17,9 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: TabsScreen(),
+      routes: {
+        SemuaRuanganScreen.routeName: (ctx) => SemuaRuanganScreen(),
+      },
     );
   }
 }
