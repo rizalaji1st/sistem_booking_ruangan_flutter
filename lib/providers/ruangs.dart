@@ -11,24 +11,26 @@ class Ruangs with ChangeNotifier {
       kapasitas: 15,
       fasilitas: [
         {
-        'nama' : 'AC',
-        'icon' : Icons.ac_unit,
+          'nama': 'AC',
+          'icon': Icons.ac_unit,
         },
         {
-        'nama' : 'Wifi',
-        'icon' : Icons.wifi,
+          'nama': 'Wifi',
+          'icon': Icons.wifi,
         },
         {
-        'nama' : 'Projector',
-        'icon' : Icons.video_settings,
+          'nama': 'Projector',
+          'icon': Icons.video_settings,
         },
         {
-        'nama' : 'LCD',
-        'icon' : Icons.desktop_mac,
+          'nama': 'LCD',
+          'icon': Icons.desktop_mac,
         },
       ],
       satuan: "Jam",
-      imageUrl: "https://cdn.pixabay.com/photo/2015/05/15/14/22/conference-room-768441_960_720.jpg",
+      imageUrl:
+          "https://cdn.pixabay.com/photo/2015/05/15/14/22/conference-room-768441_960_720.jpg",
+      biaya: '',
     ),
     Ruang(
       id: 'r2',
@@ -36,24 +38,26 @@ class Ruangs with ChangeNotifier {
       kapasitas: 10,
       fasilitas: [
         {
-        'nama' : 'AC',
-        'icon' : Icons.ac_unit,
+          'nama': 'AC',
+          'icon': Icons.ac_unit,
         },
         {
-        'nama' : 'Wifi',
-        'icon' : Icons.wifi,
+          'nama': 'Wifi',
+          'icon': Icons.wifi,
         },
         {
-        'nama' : 'Projector',
-        'icon' : Icons.video_settings,
+          'nama': 'Projector',
+          'icon': Icons.video_settings,
         },
         {
-        'nama' : 'LCD',
-        'icon' : Icons.desktop_mac,
+          'nama': 'LCD',
+          'icon': Icons.desktop_mac,
         },
       ],
       satuan: "Jam",
-      imageUrl: "https://cdn.pixabay.com/photo/2017/03/28/12/17/chairs-2181994_960_720.jpg",
+      imageUrl:
+          "https://cdn.pixabay.com/photo/2017/03/28/12/17/chairs-2181994_960_720.jpg",
+      biaya: '',
     ),
     Ruang(
       id: 'r3',
@@ -61,24 +65,26 @@ class Ruangs with ChangeNotifier {
       kapasitas: 20,
       fasilitas: [
         {
-        'nama' : 'AC',
-        'icon' : Icons.ac_unit,
+          'nama': 'AC',
+          'icon': Icons.ac_unit,
         },
         {
-        'nama' : 'Wifi',
-        'icon' : Icons.wifi,
+          'nama': 'Wifi',
+          'icon': Icons.wifi,
         },
         {
-        'nama' : 'Projector',
-        'icon' : Icons.video_settings,
+          'nama': 'Projector',
+          'icon': Icons.video_settings,
         },
         {
-        'nama' : 'LCD',
-        'icon' : Icons.desktop_mac,
+          'nama': 'LCD',
+          'icon': Icons.desktop_mac,
         },
       ],
       satuan: "Jam",
-      imageUrl: "https://cdn.pixabay.com/photo/2017/03/28/12/06/chairs-2181919_960_720.jpg",
+      imageUrl:
+          "https://cdn.pixabay.com/photo/2017/03/28/12/06/chairs-2181919_960_720.jpg",
+      biaya: '',
     ),
     Ruang(
       id: 'r4',
@@ -86,24 +92,26 @@ class Ruangs with ChangeNotifier {
       kapasitas: 10,
       fasilitas: [
         {
-        'nama' : 'AC',
-        'icon' : Icons.ac_unit,
+          'nama': 'AC',
+          'icon': Icons.ac_unit,
         },
         {
-        'nama' : 'Wifi',
-        'icon' : Icons.wifi,
+          'nama': 'Wifi',
+          'icon': Icons.wifi,
         },
         {
-        'nama' : 'Projector',
-        'icon' : Icons.video_settings,
+          'nama': 'Projector',
+          'icon': Icons.video_settings,
         },
         {
-        'nama' : 'LCD',
-        'icon' : Icons.desktop_mac,
+          'nama': 'LCD',
+          'icon': Icons.desktop_mac,
         },
       ],
       satuan: "Jam",
-      imageUrl: "https://cdn.pixabay.com/photo/2017/03/28/12/11/chairs-2181960_960_720.jpg",
+      imageUrl:
+          "https://cdn.pixabay.com/photo/2017/03/28/12/11/chairs-2181960_960_720.jpg",
+      biaya: '',
     ),
     Ruang(
       id: 'r5',
@@ -111,24 +119,26 @@ class Ruangs with ChangeNotifier {
       kapasitas: 15,
       fasilitas: [
         {
-        'nama' : 'AC',
-        'icon' : Icons.ac_unit,
+          'nama': 'AC',
+          'icon': Icons.ac_unit,
         },
         {
-        'nama' : 'Wifi',
-        'icon' : Icons.wifi,
+          'nama': 'Wifi',
+          'icon': Icons.wifi,
         },
         {
-        'nama' : 'Projector',
-        'icon' : Icons.video_settings,
+          'nama': 'Projector',
+          'icon': Icons.video_settings,
         },
         {
-        'nama' : 'LCD',
-        'icon' : Icons.desktop_mac,
+          'nama': 'LCD',
+          'icon': Icons.desktop_mac,
         },
       ],
       satuan: "Jam",
-      imageUrl: "https://cdn.pixabay.com/photo/2017/03/28/12/16/chairs-2181980_960_720.jpg",
+      imageUrl:
+          "https://cdn.pixabay.com/photo/2017/03/28/12/16/chairs-2181980_960_720.jpg",
+      biaya: '',
     ),
     Ruang(
       id: 'r6',
@@ -136,29 +146,30 @@ class Ruangs with ChangeNotifier {
       kapasitas: 40,
       fasilitas: [
         {
-        'nama' : 'AC',
-        'icon' : Icons.ac_unit,
+          'nama': 'AC',
+          'icon': Icons.ac_unit,
         },
         {
-        'nama' : 'Wifi',
-        'icon' : Icons.wifi,
+          'nama': 'Wifi',
+          'icon': Icons.wifi,
         },
         {
-        'nama' : 'Projector',
-        'icon' : Icons.video_settings,
+          'nama': 'Projector',
+          'icon': Icons.video_settings,
         },
         {
-        'nama' : 'LCD',
-        'icon' : Icons.desktop_mac,
+          'nama': 'LCD',
+          'icon': Icons.desktop_mac,
         },
       ],
       satuan: "Jam",
-      imageUrl: "https://cdn.pixabay.com/photo/2017/03/28/12/06/chairs-2181916_960_720.jpg",
+      imageUrl:
+          "https://cdn.pixabay.com/photo/2017/03/28/12/06/chairs-2181916_960_720.jpg",
+      biaya: '',
     ),
   ];
 
-
-  List<Ruang> get getRuangsAll{
+  List<Ruang> get getRuangsAll {
     return [..._ruangs];
   }
 }

@@ -9,16 +9,25 @@ class TabsScreen extends StatefulWidget {
 }
 
 class _TabsScreenState extends State<TabsScreen> {
-  List<Map<String, Object>> _pages;
+  late List<Map<String, Object>> _pages;
   int _selectedPageIndex = 1;
 
   @override
   void initState() {
     _pages = [
-    { 'title': 'Terpesan','page': TerpesanScreen(),},
-    { 'title': 'Beranda','page': BerandaScreen(),},
-    {'title': 'Manajemen Akun', 'page': AkunScreen() ,},
-  ] ;
+      {
+        'title': 'Terpesan',
+        'page': TerpesanScreen(),
+      },
+      {
+        'title': 'Beranda',
+        'page': BerandaScreen(),
+      },
+      {
+        'title': 'Manajemen Akun',
+        'page': AkunScreen(),
+      },
+    ];
     super.initState();
   }
 
@@ -38,7 +47,7 @@ class _TabsScreenState extends State<TabsScreen> {
         ),
         body: _pages[_selectedPageIndex]['page'] as Widget,
         bottomNavigationBar: BottomNavigationBar(
-          onTap:_selectPage,
+          onTap: _selectPage,
           backgroundColor: Colors.white,
           unselectedItemColor: Colors.grey,
           selectedItemColor: Colors.blue,

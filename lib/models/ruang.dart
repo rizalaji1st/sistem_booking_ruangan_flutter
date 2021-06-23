@@ -1,4 +1,4 @@
-class Ruang{
+class Ruang {
   final String id;
   final String nama;
   final int kapasitas;
@@ -6,6 +6,12 @@ class Ruang{
   final String biaya;
   final String satuan;
   final String imageUrl;
-  Ruang({this.id, this.nama, this.kapasitas, this.fasilitas, this.biaya, this.satuan, this.imageUrl});
-
+  Ruang(
+      {required this.id,
+      required this.nama,
+      required this.kapasitas,
+      required this.fasilitas,
+      required this.biaya,
+      required this.satuan,
+      required this.imageUrl});
 }
