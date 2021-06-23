@@ -18,31 +18,34 @@ class SemuaRuanganScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: new Card(
-              child: new ListTile(
-                title: new TextField(
-                  decoration: new InputDecoration(
-                      hintText: 'Search', border: InputBorder.none),
-                  onChanged: (tes) {},
-                ),
-                trailing: new IconButton(
-                  icon: new Icon(Icons.search),
-                  onPressed: () {},
+              padding: const EdgeInsets.all(8.0),
+              child: new Card(
+                child: new ListTile(
+                  title: new TextField(
+                    decoration: new InputDecoration(
+                        hintText: 'Search', border: InputBorder.none),
+                    onChanged: (tes) {},
+                  ),
+                  trailing: new IconButton(
+                    icon: new Icon(Icons.search),
+                    onPressed: () {},
+                  ),
                 ),
               ),
             ),
-          ),
-          SingleChildScrollView(
-            child: Container(
-              height: MediaQuery.of(context).size.height * .70,
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemBuilder: (_, index) => ChangeNotifierProvider.value(value: ruangs[index], child: RuangItem(),),
-                itemCount: ruangs.length,
+            SingleChildScrollView(
+              child: Container(
+                height: MediaQuery.of(context).size.height * .70,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  itemBuilder: (_, index) => ChangeNotifierProvider.value(
+                    value: ruangs[index],
+                    child: RuangItem(),
+                  ),
+                  itemCount: ruangs.length,
+                ),
               ),
             ),
-          ),
           ],
         ),
       ),

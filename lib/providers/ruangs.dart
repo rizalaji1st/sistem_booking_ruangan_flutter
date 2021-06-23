@@ -172,4 +172,8 @@ class Ruangs with ChangeNotifier {
   List<Ruang> get getRuangsAll {
     return [..._ruangs];
   }
+
+  Ruang findById(String id){
+    return _ruangs.firstWhere((ruang) => ruang.id == id);
+  }
 }
