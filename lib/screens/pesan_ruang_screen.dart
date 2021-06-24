@@ -12,15 +12,20 @@ class PesanRuangScreen extends StatefulWidget {
 
 class _PesanRuangScreenState extends State<PesanRuangScreen> {
   DateTime tanggalPesan = DateTime.now();
+  late TimeOfDay jamAwal;
+  late TimeOfDay jamAkhir;
 
   @override
   void initState() {
+    jamAwal = TimeOfDay.now();
+    jamAkhir = TimeOfDay.now();
     // TODO: implement initState
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+    final localizations = MaterialLocalizations.of(context);
     final route = ModalRoute.of(context);
     if (route == null) return SizedBox.shrink();
     final ruangId = route.settings.arguments as String;
@@ -148,9 +153,82 @@ class _PesanRuangScreenState extends State<PesanRuangScreen> {
                         children: [
                           ListTile(
                             title: Text(
-                              'Pilih Jam ',
+                              'Pilih Jam Awal',
                               style:
                                   TextStyle(color: Colors.blue, fontSize: 20),
+                            ),
+                            subtitle: Text(
+                                'Piihan sekarang jam: ${localizations.formatTimeOfDay(jamAwal)}'),
+                            trailing: Icon(Icons.timer),
+                            onTap: _pickJamAwal,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Card(
+                    elevation: 4,
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.8,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          ListTile(
+                            title: Text(
+                              'Pilih Jam Akhir',
+                              style:
+                                  TextStyle(color: Colors.blue, fontSize: 20),
+                            ),
+                            subtitle: Text(
+                                'Piihan sekarang jam: ${localizations.formatTimeOfDay(jamAkhir)}'),
+                            trailing: Icon(Icons.timer),
+                            onTap: _pickJamAkhir,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Card(
+                    elevation: 4,
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.8,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          ListTile(
+                            title: Text(
+                              'Nama Kegiatan',
+                              style:
+                                  TextStyle(color: Colors.blue, fontSize: 20),
+                            ),
+                            subtitle: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: TextField(
+                                obscureText: true,
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(),
+                                  labelText: 'Masukkan nama kegiatan',
+                                ),
+                              ),
+                            ),
+                            trailing: Icon(Icons.timer),
+                            onTap: _pickJamAkhir,
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(top: 10),
+                            child: ElevatedButton(
+                              onPressed: () {},
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: Colors.blue),
+                                padding: EdgeInsets.symmetric(
+                                    vertical: 20, horizontal: 50),
+                                child: Text(
+                                  'Pesan Ruangan',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
                             ),
                           ),
                         ],
@@ -164,5 +242,35 @@ class _PesanRuangScreenState extends State<PesanRuangScreen> {
         ),
       ),
     );
+  }
+
+  _pickJamAwal() async {
+    TimeOfDay time = await showTimePicker(
+        context: context,
+        initialTime: jamAwal,
+        builder: (BuildContext context, Widget? child) {
+          return Theme(data: ThemeData(), child: child as Widget);
+        }) as TimeOfDay;
+
+    if (time != null) {
+      setState(() {
+        jamAwal = time;
+      });
+    }
+  }
+
+  _pickJamAkhir() async {
+    TimeOfDay time = await showTimePicker(
+        context: context,
+        initialTime: jamAkhir,
+        builder: (BuildContext context, Widget? child) {
+          return Theme(data: ThemeData(), child: child as Widget);
+        }) as TimeOfDay;
+
+    if (time != null) {
+      setState(() {
+        jamAkhir = time;
+      });
+    }
   }
 }
